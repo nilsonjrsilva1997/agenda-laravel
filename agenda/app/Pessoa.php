@@ -5,13 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Pessoa extends Model
-{
-    // php artisan make:model <nome da model>
-    // php artisan make:migration cria_tabela_pessoas 
-    protected $filable = [
-    	'id',
-    	'nome'
-    ];
+{    
+    // App\Pessoa::create(['nome'=>'jeane']);
+    protected $fillable = ['nome', 'id'];
 
-    protected $table = 'pessoas';
+	protected $table = 'pessoas';
+
+	public function telefone() {
+		return $this->hasMany(Telefone::class, 'pessoa_id');
+	}
 }

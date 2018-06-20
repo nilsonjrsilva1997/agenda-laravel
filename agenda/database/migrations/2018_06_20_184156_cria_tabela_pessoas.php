@@ -13,12 +13,7 @@ class CriaTabelaPessoas extends Migration
      */
     public function up()
     {
-        // criando
-        Schema::create('pessoas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -28,7 +23,6 @@ class CriaTabelaPessoas extends Migration
      */
     public function down()
     {
-        // desfazer uma ação
-        Schema::dropIfExists('pessoas');
+        //
     }
 }
